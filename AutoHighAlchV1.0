@@ -1,0 +1,22 @@
+#!/bin/bash
+# Author: Jason Huang @ github: jasonhuang2
+# REVISED date: June 7, 2020
+#
+# Description: Simple bash script used to automate high alch clicking in MMORPG Old School RuneScape
+# FEATURES:
+#  - Implements true randomness delays in between clicks to prevent ban
+#  - Requires player to input X and Y coordinates of screen
+low=100
+high=400
+while [ 1 ]; do
+  rand=$((low + RANDOM%(1+hgh-low)))
+  rand2=$((low + RANDOM%(1+30-10)))
+  a="3.${rand}"
+  b="0.${rand2}"
+  echo "Sec delay: ${a}"
+  echo "delay between click 1 and 2: ${b}"
+  xdotool mousemove 1069 649 click 1 &
+  sleep $b
+  xdotool mousemove 1069 649 click 1 &
+  sleep $a
+done
